@@ -1,3 +1,4 @@
 <x-tests.app>
-2
+    <x-slot name="header">ヘッダー2</x-slot>
+    2
 </x-tests.app>
