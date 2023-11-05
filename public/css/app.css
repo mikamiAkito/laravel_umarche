@@ -720,10 +720,6 @@ select {
   margin-left: auto;
   margin-right: auto;
 }
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
 .-ml-px {
   margin-left: -1px;
 }
@@ -801,9 +797,6 @@ select {
 }
 .h-20 {
   height: 5rem;
-}
-.h-32 {
-  height: 8rem;
 }
 .h-4 {
   height: 1rem;
@@ -896,9 +889,6 @@ select {
 .cursor-default {
   cursor: default;
 }
-.resize-none {
-  resize: none;
-}
 .list-inside {
   list-style-position: inside;
 }
@@ -910,9 +900,6 @@ select {
 }
 .flex-col {
   flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
 }
 .items-center {
   align-items: center;
@@ -1094,10 +1081,6 @@ select {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1182,20 +1165,11 @@ select {
 .leading-5 {
   line-height: 1.25rem;
 }
-.leading-6 {
-  line-height: 1.5rem;
-}
 .leading-7 {
   line-height: 1.75rem;
 }
 .leading-8 {
   line-height: 2rem;
-}
-.leading-normal {
-  line-height: 1.5;
-}
-.leading-relaxed {
-  line-height: 1.625;
 }
 .leading-tight {
   line-height: 1.25;
@@ -1241,10 +1215,6 @@ select {
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
-}
-.text-indigo-500 {
-  --tw-text-opacity: 1;
-  color: rgb(99 102 241 / var(--tw-text-opacity));
 }
 .text-indigo-600 {
   --tw-text-opacity: 1;
