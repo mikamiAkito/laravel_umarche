@@ -16,22 +16,22 @@
                             <table class="table-auto w-full text-left whitespace-no-wrap">
                                 <thead>
                                 <tr>
-                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">名前</th>
-                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">メールアドレス</th>
-                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">期限が切れた日</th>
-                                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
+                                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">名前</th>
+                                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">メールアドレス</th>
+                                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">期限が切れた日</th>
+                                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($expiredOwners as $owner)
                                 <tr>
-                                    <td class="px-4 py-3">{{ $owner->name }}</td>
-                                    <td class="px-4 py-3">{{ $owner->email }}</td>
-                                    <td class="px-4 py-3">{{ $owner->deleted_at->diffForHumans() }}</td>
+                                    <td class="md:px-4 py-3">{{ $owner->name }}</td>
+                                    <td class="md:px-4 py-3">{{ $owner->email }}</td>
+                                    <td class="md:px-4 py-3">{{ $owner->deleted_at->diffForHumans() }}</td>
                                     <form id="delete_{{$owner->id}}" method="post" action="{{ route('admin.expired-owners.destroy', ['owner' => $owner->id ] )}}">
                                         @csrf
-                                        <td class="px-4 py-3">
-                                            <a href="#" data-id="{{ $owner->id }}" onclick="deletePost(this)" class="text-white bg-red-300 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded ">完全に削除</a>
+                                        <td class="md:px-4 py-3">
+                                            <a href="#" data-id="{{ $owner->id }}" onclick="deletePost(this)" class="text-white bg-red-300 border-0 py-2 md:px-8 focus:outline-none hover:bg-indigo-600 rounded ">完全に削除</a>
                                         </td>
                                     </form>
                                 </tr>
