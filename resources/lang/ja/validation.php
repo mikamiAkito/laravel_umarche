@@ -157,6 +157,15 @@ return [
         'name' => '名前',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
+        'quantity' => '在庫数',
+        'information' => '商品情報',
+        'price' => '価格',
+        'sort_order' => '表示順',
+        'category' => 'カテゴリー',
+        'image1' => '画像',
+        'image2' => '画像',
+        'image3' => '画像',
+        'image4' => '画像',
     ],
 
 ];
