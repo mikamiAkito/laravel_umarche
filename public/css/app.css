@@ -145,6 +145,7 @@
   .micromodal-slide .modal__container,
   .micromodal-slide .modal__overlay {
     will-change: transform;
+    z-index: 9999;
   }
 .swiper-container {
     /* width: 600px; */
@@ -769,9 +770,6 @@ select{
 }
 .z-0{
   z-index: 0;
-}
-.z-20{
-  z-index: 20;
 }
 .z-50{
   z-index: 50;
