@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentTestController;
 use App\Http\Controllers\LifeCyacleTestController;
 use App\Http\Controllers\User\ItemController;
+use App\Http\Controllers\User\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,11 @@ Route::middleware('auth:users')->group(function () {
     ->name('items.show');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('user.dashboard');
-// })->middleware(['auth:users'])->name('dashboard');
+
+Route::prefix('user')->middleware('auth:users')->group(function () {
+    Route::post('add', [CartController::class, 'add'])
+    ->name('cart.add');
+});
 
 Route::get('/component_test1', [ComponentTestController::class, 'showConponent1']);
 Route::get('/component_test2', [ComponentTestController::class, 'showConponent2']);
