@@ -22,8 +22,10 @@ class CartController extends Controller
 
         // dd($totalPrice, $products);
 
-        return view('user.cart', 
-            compact('products', 'totalPrice'));
+        return view(
+            'user.cart',
+            compact('products', 'totalPrice')
+        );
     }
 
     public function add(Request $request)
@@ -41,6 +43,14 @@ class CartController extends Controller
                 'quantity' => $request->quantity,
             ]);
         }
+        return redirect()->route('user.cart.index');
+    }
+
+    public function delete($id)
+    {
+        Cart::where('user_id', Auth::id())->where('product_id', $id)
+        ->delete();
+
         return redirect()->route('user.cart.index');
     }
 }
