@@ -73,9 +73,7 @@
             <x-responsive-nav-link :href="route('user.items.index')" :active="request()->routeIs('use.items.index')">
                 {{ __('ホーム') }}
             </x-responsive-nav-link>
-        </div>
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('user.items.index')" :active="request()->routeIs('use.items.index')">
+            <x-responsive-nav-link :href="route('user.cart.index')" :active="request()->routeIs('use.cart.index')">
                 カートを表示
             </x-responsive-nav-link>
         </div>

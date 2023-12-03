@@ -70,11 +70,17 @@ class CartController extends Controller
             if($product->pivot->quantity > $quantity){
                 return redirect()->route('user.cart.index');
             }else{
-                $lineItem = [
-                    'name' => $product->name,
-                    'description' => $product->information,
-                    'name' => $product->price,
+                $price_data = ([
+                    'unit_amount' => $product->price,
                     'currency' => 'jpy',
+                    'product_data' => $product_data = ([
+                        'name' => $product->name,
+                        'description' => $product->information,
+                    ]),
+                ]);
+
+                $lineItem = [
+                    'price_data' => $price_data,
                     'quantity' => $product->pivot->quantity,
                 ];
                 array_push($lineItems, $lineItem);
@@ -88,8 +94,6 @@ class CartController extends Controller
                 'quantity' => $product->pivot->quantity * -1
             ]);
         }
-        
-        dd('test');
 
         \Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
         $session = \Stripe\Checkout\Session::create([ 
