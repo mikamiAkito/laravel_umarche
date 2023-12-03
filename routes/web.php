@@ -37,6 +37,8 @@ Route::prefix('cart')->middleware('auth:users')->group(function () {
     ->name('cart.add');
     Route::post('delete/{item}', [CartController::class, 'delete'])
     ->name('cart.delete');
+    Route::get('checkout', [CartController::class, 'checkout'])
+    ->name('cart.checkout');
 });
 
 Route::get('/component_test1', [ComponentTestController::class, 'showConponent1']);
