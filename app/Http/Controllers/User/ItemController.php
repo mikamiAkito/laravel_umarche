@@ -9,6 +9,7 @@ use App\Models\Stock;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
+use App\Jobs\SendThanksMail;
 use App\Models\PrimaryCategory;
 
 class ItemController extends Controller
@@ -31,8 +32,12 @@ class ItemController extends Controller
 
     public function index(Request $request)
     {
-        Mail::to('test@example.com')
-        ->send(new TestMail());
+        //非同期処理
+        SendThanksMail::dispatch();
+
+        //同期処理
+        // Mail::to('test@example.com')
+        // ->send(new TestMail());
 
         $categories = PrimaryCategory::with('secondary')
         ->get();
