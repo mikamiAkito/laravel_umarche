@@ -33,7 +33,7 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         //非同期処理
-        SendThanksMail::dispatch();
+        //SendThanksMail::dispatch();
 
         //同期処理
         // Mail::to('test@example.com')
